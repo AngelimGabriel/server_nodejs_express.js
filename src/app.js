@@ -1,5 +1,6 @@
 import express from "express";
 import routes from "./routes.js";
+import cors from "cors";
 
 // import "./database";
 
@@ -8,6 +9,7 @@ class App {
         this.server = express();
         this.middlewares();
         this.routes();
+        this.cors();
     }
 
     middlewares() {
@@ -16,6 +18,9 @@ class App {
 
     routes() {
         this.server.use(routes);
+    }
+    cors() {
+        this.server.use(cors({ origin: "http://192.168.0.2:5173" }));
     }
 }
 
