@@ -14,13 +14,11 @@ class App {
 
     middlewares() {
         this.server.use(express.json());
+        this.server.use(cors({ origin: "http://192.168.0.2:5173" }));
     }
 
     routes() {
         this.server.use(routes);
-    }
-    cors() {
-        this.server.use(cors({ origin: "http://192.168.0.2:5173" }));
     }
 }
 
