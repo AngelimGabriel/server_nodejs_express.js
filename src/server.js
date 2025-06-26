@@ -1,5 +1,5 @@
 import app from "./app.js";
-const cors = require("cors");
+import cors from "cors";
 
 const PORT = process.env.PORT || 3000;
 
